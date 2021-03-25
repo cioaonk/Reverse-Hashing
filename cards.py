@@ -3,7 +3,6 @@ import sys
 import os
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.backends import default_backend
-from cryptography.hazmat.primitives import SHA256
 from signal import signal,SIGINT
 
 # terminates the program gracefully
@@ -57,7 +56,7 @@ cards = 0
 while (cardnum <=  endnumber):
     cardtext = str(cardnum)
     if is_luhn_valid(cardnum):
-        digest = hashes.Hash(hashes.SHA256())
+        digest = hashes.Hash(hashes.XXX)
         digest.update(cardtext.encode('latin1'))
         myHash = digest.finalize()
         yourHex = myHash.hex()
